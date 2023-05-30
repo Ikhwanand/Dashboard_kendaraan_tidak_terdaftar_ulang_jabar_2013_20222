@@ -128,7 +128,7 @@ with left_tab1:
 with left_tab2:
     if selected_regions != 'Semua':
         st.subheader('Jumlah kendaraan berdasarkan fungsi kendaraan')
-        figline3 = px.pie(pivot_kabupaten_kota_kendaraan, values='jumlah_kendaraan', names='fungsi_kendaraan')
+        figline3 = px.bar(pivot_kabupaten_kota_kendaraan, x='nama_kabupaten_kota', y='jumlah_kendaraan', color='fungsi_kendaraan', barmode='group')
         st.plotly_chart(figline3, use_container_width=True, config={'displayModeBar': True})
     else:
         st.subheader('Jumlah kendaraan berdasarkan fungsi kendaraan')
