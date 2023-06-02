@@ -104,7 +104,7 @@ with met1:
 
 with met2:
     mean = df_kendaraan['jumlah_kendaraan'].mean().astype(float)
-    st.metric(label='Rata-rata kendaraan tiap tahun', value=numerize.numerize(mean))
+    st.metric(label='Nilai rata-rata kendaraan tiap tahun', value=numerize.numerize(mean))
     
 with met3:
     minimal = df_kendaraan['jumlah_kendaraan'].min().astype(float)
