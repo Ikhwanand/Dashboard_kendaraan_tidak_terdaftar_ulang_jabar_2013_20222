@@ -33,7 +33,7 @@ def load_url(url: str):
 
 animation = load_url('https://assets10.lottiefiles.com/packages/lf20_ymyikn6l.json')
 # Organisation du dashboard
-met1, met2, met3 = st.columns(3)
+met1, met2, met3, met4 = st.columns(4)
 left_tab1, left_tab2, right_tab1, right_tab2 = st.tabs(['Visual 1', 'Visual 2', 'Visual 3', 'Visual 4'])
 # Ajout d'un formulaire de filtre
 with st.sidebar:
@@ -101,12 +101,16 @@ with st.sidebar:
 with met1:
     summary = df_kendaraan['jumlah_kendaraan'].sum().astype(float)
     st.metric(label='Total kendaraan', value=numerize.numerize(summary))
-    
+
 with met2:
+    mean = df_kendaraan['jumlah_kendaraan'].mean().astype(float)
+    st.metric(label='Rata-rata kendaraan tiap tahun', value=numerize.numerize(mean))
+    
+with met3:
     minimal = df_kendaraan['jumlah_kendaraan'].min().astype(float)
     st.metric(label='Minimal jumlah kendaraan', value=numerize.numerize(minimal))
 
-with met3:
+with met4:
     maximal = df_kendaraan['jumlah_kendaraan'].max().astype(float)
     st.metric(label='Maximal jumlah kendaraan', value=numerize.numerize(maximal))
 
